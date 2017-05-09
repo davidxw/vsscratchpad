@@ -11,9 +11,9 @@
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="30" />
+            <!--<RowDefinition Height="30" />-->
         </Grid.RowDefinitions>
         <TextBox Grid.Row="0" x:Name="ScratchPadContent" Background="{DynamicResource VsBrush.Window}" Foreground="{DynamicResource VsBrush.WindowText}" AcceptsReturn="True" AcceptsTab="True" AutoWordSelection="True" TextWrapping="Wrap" BorderBrush="{x:Null}" SelectionBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" FontFamily="Consolas" FontSize="13.333" BorderThickness="0" VerticalScrollBarVisibility="Auto"></TextBox>
-        <Button Grid.Row="1" x:Name="Clear" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" Width="40" Background="{DynamicResource VsBrush.Window}" BorderBrush="{DynamicResource VsBrush.WindowText}" TextElement.Foreground="{DynamicResource VsBrush.WindowText}" Click="Clear_Click">Clear</Button>
+        <!--<Button Grid.Row="1" x:Name="Clear" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" Width="40" Background="{DynamicResource VsBrush.Window}" BorderBrush="{DynamicResource VsBrush.WindowText}" TextElement.Foreground="{DynamicResource VsBrush.WindowText}" Click="Clear_Click">Clear</Button>-->
     </Grid>
 </UserControl>
