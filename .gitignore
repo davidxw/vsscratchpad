@@ -3,3 +3,6 @@
 ################################################################################
 
 /Backup
+/packages
+/VSIXProject1/bin/Debug
+/VSIXProject1/obj/Debug

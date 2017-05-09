@@ -12,6 +12,7 @@ namespace VSIXProject1
     using System.Timers;
     using Microsoft.VisualStudio.Shell;
     using System.Diagnostics;
+    using global::Scratchpad;
 
     /// <summary>
     /// This class implements the tool window exposed by this package and hosts a user control.
@@ -27,37 +28,30 @@ namespace VSIXProject1
     [Guid("ddbe1f11-da6b-45a5-8598-037c5ba13893")]
     public class Scratchpad : ToolWindowPane
     {
-        private string fileSavePath;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Scratchpad"/> class.
         /// </summary>
         public Scratchpad() : base(null)
         {
-            fileSavePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "vs_scratchpad.txt");
+           
+            SetUpFileSystemWatcher();
 
             this.Caption = "Scratchpad";
 
             this.Content = new ScratchpadControl();
         }
 
-        protected override void OnCreate()
+        private void SetUpFileSystemWatcher()
         {
-            try
-            {
-                ((ScratchpadControl)this.Content).ScratchPadContent.Text = System.IO.File.ReadAllText(fileSavePath);
-            }
-            catch (Exception ex)
-            {
-                Debug.Write(ex);
-            }
+            FileContentManager.Instance.Init();
         }
 
         protected override void OnClose()
         {
             try
             {
-                System.IO.File.WriteAllText(fileSavePath, ((ScratchpadControl)this.Content).ScratchPadContent.Text);
+                FileContentManager.Instance.Save(((ScratchpadControl)this.Content).ScratchPadContent.Text);
             }
             catch (Exception ex)
             {

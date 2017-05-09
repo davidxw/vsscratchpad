@@ -6,6 +6,7 @@
 
 namespace VSIXProject1
 {
+    using global::Scratchpad;
     using System;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
@@ -26,6 +27,33 @@ namespace VSIXProject1
         public ScratchpadControl()
         {
             this.InitializeComponent();
+            ScratchPadContent.Text = FileContentManager.Instance.Load();
+
+            FileContentManager.Instance.ContentChanged += FileContentManager_ContentChanged;
+
+            Timer writeTimer = new Timer(Constants.SaveIntervalInMilliseconds);
+            writeTimer.Elapsed += WriteTimer_Elapsed;
+            writeTimer.Start();
+        }
+
+        private void WriteTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            string text = null;
+
+            this.Dispatcher.Invoke(() =>
+            {
+                text = ScratchPadContent.Text;
+            });
+
+            FileContentManager.Instance.Save(text);
+        }
+
+        private void FileContentManager_ContentChanged(object sender, EventArgs e)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                ScratchPadContent.Text = ((ContentChangedEventArgs)e).NewContent;
+            });
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
