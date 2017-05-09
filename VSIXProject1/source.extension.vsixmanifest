@@ -3,8 +3,10 @@
   <Metadata>
     <Identity Id="VSIXProject1.David Watson.a56dd1fc-08d4-4b56-a3b0-581d97882818" Version="1.0" Language="en-US" Publisher="David Watson" />
     <DisplayName>Scratchpad</DisplayName>
-    <Description xml:space="preserve">Simple scratchpad window for Visual Studio</Description>
+    <Description xml:space="preserve">Simple scratchpad window for Visual Studio. Contents are saved to a text file in your Documents directory, and are synced across open VS instances.</Description>
+    <License>LICENSE.txt</License>
     <Icon>Resources\ScratchpadPackage.ico</Icon>
+    <PreviewImage>Resources\ScratchpadPackage.ico</PreviewImage>
   </Metadata>
   <Installation>
     <InstallationTarget Version="[14.0,15.0]" Id="Microsoft.VisualStudio.Enterprise" />
@@ -12,8 +14,8 @@
     <InstallationTarget Version="[14.0,15.0]" Id="Microsoft.VisualStudio.Community" />
   </Installation>
   <Prerequisites>
-   <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0.25904.2,16.0)" DisplayName="Visual Studio core editor" />
-</Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0.25904.2,16.0)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     <Dependency Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" d:Source="Installed" Version="[15.0,16.0)" />
