@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="VSIXProject1.David Watson.a56dd1fc-08d4-4b56-a3b0-581d97882818" Version="1.0" Language="en-US" Publisher="David Watson" />
+    <Identity Id="VSIXProject1.David Watson.a56dd1fc-08d4-4b56-a3b0-581d97882818" Version="1.1" Language="en-US" Publisher="David Watson" />
     <DisplayName>Scratchpad</DisplayName>
     <Description xml:space="preserve">Simple scratchpad window for Visual Studio. </Description>
     <Icon>Resources\ScratchpadPackage.ico</Icon>
-    <PreviewImage>Resources\ScratchpadPackage.ico</PreviewImage>
+    <PreviewImage>screenshot.PNG</PreviewImage>
   </Metadata>
   <Installation>
     <InstallationTarget Version="[14.0,15.0]" Id="Microsoft.VisualStudio.Enterprise" />

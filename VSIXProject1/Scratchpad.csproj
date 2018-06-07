@@ -80,7 +80,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="DiffMatchPatch.cs" />
     <Compile Include="FileContentManager.cs" />
     <Compile Include="IContentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,7 +115,15 @@
     </Content>
     <VSCTCompile Include="ScratchpadPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
+      <SubType>Designer</SubType>
     </VSCTCompile>
+    <Content Include="Resources\screenshot.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="screenshot.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="stylesheet.css" />
   </ItemGroup>
   <ItemGroup>

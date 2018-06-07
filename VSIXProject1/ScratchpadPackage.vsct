@@ -61,7 +61,9 @@
       <Bitmap guid="guidImages" href="Resources\ScratchpadCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
     </Bitmaps>
   </Commands>
-
+  <KeyBindings>
+    <KeyBinding guid="guidScratchpadPackageCmdSet" id="ScratchpadCommandId" editor="guidVSStd97" mod1="Control" key1="0xE2" mod2="Shift"/>
+  </KeyBindings>
   <Symbols>
     <!-- This is the package guid. -->
     <GuidSymbol name="guidScratchpadPackage" value="{3b2694d9-2092-4686-9d2b-95ae939245f9}" />
