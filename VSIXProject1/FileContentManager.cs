@@ -53,7 +53,6 @@ namespace Scratchpad
 
         private void Watcher_Changed(object sender, FileSystemEventArgs e)
         {
-            Thread.Sleep(100);
             RefreshCurrentContentFromFile();
 
             ContentChanged(this, new ContentChangedEventArgs { NewContent = currentContent });
@@ -82,6 +81,8 @@ namespace Scratchpad
 
         private void RefreshCurrentContentFromFile()
         {
+            Thread.Sleep(150);
+
             if (!File.Exists(fileSavePath))
             {
                 return;

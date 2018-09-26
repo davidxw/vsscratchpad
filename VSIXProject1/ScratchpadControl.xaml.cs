@@ -21,6 +21,9 @@ namespace VSIXProject1
     /// </summary>
     public partial class ScratchpadControl : UserControl
     {
+
+        private const int currentPositionComparionLength = 10;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ScratchpadControl"/> class.
         /// </summary>
@@ -52,7 +55,35 @@ namespace VSIXProject1
         {
             this.Dispatcher.Invoke(() =>
             {
+                var comparisonOffset = 0;
+                var currentPositionString = string.Empty;
+
+                var currentCursorPosition = ScratchPadContent.SelectionStart;
+                var textLengthGreaterThanSampleSize = ScratchPadContent.Text.Length > currentPositionComparionLength;
+
+                if (textLengthGreaterThanSampleSize)
+                {
+                    comparisonOffset = currentCursorPosition >= currentPositionComparionLength
+                    ? currentPositionComparionLength
+                    : 0;
+
+                    currentPositionString = ScratchPadContent.Text.Substring(currentCursorPosition - comparisonOffset, currentPositionComparionLength);
+                }
+                else
+                {
+                    comparisonOffset = currentCursorPosition;
+                    currentPositionString = ScratchPadContent.Text;
+                }
+
                 ScratchPadContent.Text = ((ContentChangedEventArgs)e).NewContent;
+
+                var currentPositionFoundIndex = ScratchPadContent.Text.IndexOf(currentPositionString);
+
+                if (currentPositionFoundIndex == -1)
+                    ScratchPadContent.SelectionStart = currentCursorPosition;
+                else
+                    ScratchPadContent.SelectionStart = currentPositionFoundIndex + comparisonOffset;
+
             });
         }
 
