@@ -62,7 +62,8 @@
     </Bitmaps>
   </Commands>
   <KeyBindings>
-    <KeyBinding guid="guidScratchpadPackageCmdSet" id="ScratchpadCommandId" editor="guidVSStd97" mod1="Control" key1="0xE2" mod2="Shift"/>
+    <!-- https://docs.microsoft.com/en-us/windows/desktop/inputdev/virtual-key-codes -->
+    <KeyBinding guid="guidScratchpadPackageCmdSet" id="ScratchpadCommandId" editor="guidVSStd97" mod1="Control" key1="0xDC" mod2="Control" key2="0xDC"/>
   </KeyBindings>
   <Symbols>
     <!-- This is the package guid. -->
