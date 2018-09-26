@@ -81,16 +81,24 @@ namespace Scratchpad
 
         private void RefreshCurrentContentFromFile()
         {
-            Thread.Sleep(150);
+            Thread.Sleep(250);
 
-            if (!File.Exists(fileSavePath))
+            try
             {
-                return;
+                if (!File.Exists(fileSavePath))
+                {
+                    return;
+                }
+
+                var fileContent = System.IO.File.ReadAllText(fileSavePath);
+
+                currentContent = fileContent;
+            }
+            catch (System.IO.IOException ex)
+            {
+                Debug.WriteLine(ex.Message);
             }
 
-            var fileContent = System.IO.File.ReadAllText(fileSavePath);
-
-            currentContent = fileContent;
         }
     }
 
