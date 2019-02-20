@@ -7,6 +7,10 @@ Open the scratchpad from the "View" -> "Other Windows" menu, or use the keyboard
 
 Comments or issues in the github repo.
 
+Fixes in version 1.5:
+
+* Update manifest to allow installation in VS2019
+
 Fixes in version 1.4:
 
 * Attempt to maintain cursor position when multiple instances of VS are updating the scratchpad
